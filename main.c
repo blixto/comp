@@ -63,30 +63,15 @@ comp(int a, int b, relop type)
 {
     switch (type) {
         case LT:
-            if (a < b)
-                return TRUE;
-            else
-                return FALSE;
+            return (a < b)?TRUE:FALSE;
         case LE:
-            if (a <= b)
-                return TRUE;
-            else
-                return FALSE;
+            return (a <= b)?TRUE:FALSE;
         case EQ:
-            if (a == b)
-                return TRUE;
-            else
-                return FALSE;
+            return (a == b)?TRUE:FALSE;
         case GE:
-            if (a >= b)
-                return TRUE;
-            else
-                return FALSE;
+            return (a >= b)?TRUE:FALSE;
         case GT:
-            if (a > b)
-                return TRUE;
-            else
-                return FALSE;
+            return (a > b)?TRUE:FALSE;
         default:
             return ERR;
     }
