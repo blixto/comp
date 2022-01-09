@@ -25,8 +25,6 @@ typedef struct {
     char *sym;
 } Operation;
 
-Operation REL[] = {{LT, "<"}, {LE, "<="}, {EQ, "=="}, {GE, ">="}, {GT, ">"}};
-
 #define foreach(c,el,L,T) for (c = 0, el = *L; c < (sizeof(L)/sizeof(T)); el = *(L + ++c))
 
 bool comp(int, int, relop);
@@ -42,6 +40,7 @@ main(int argc, char **args)
     }
     int c;
     Operation op;
+    Operation REL[] = {{LT, "<"}, {LE, "<="}, {EQ, "=="}, {GE, ">="}, {GT, ">"}};
     bool result;
     int a = atoi(*(args+A));
     int b = atoi(*(args+B));
