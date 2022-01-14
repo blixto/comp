@@ -30,10 +30,10 @@ typedef struct {
 bool comp(int, int, relop);
 
 int
-main(int argc, char **args)
+main(int argc, char **argv)
 {
     if (argc != NARGS) {
-        printf("%s: Fatal input error.\n", *args);
+        printf("%s: Fatal input error.\n", *argv);
         printf("Wrong number of arguments\nargc = %d\n", argc);
         printf("Arg. count must be exactly %d.\n", NARGS);
         return ERR;
@@ -42,8 +42,8 @@ main(int argc, char **args)
     Operation op;
     Operation REL[] = {{LT, "<"}, {LE, "<="}, {EQ, "=="}, {GE, ">="}, {GT, ">"}};
     bool result;
-    int a = atoi(*(args+A));
-    int b = atoi(*(args+B));
+    int a = atoi(*(argv+A));
+    int b = atoi(*(argv+B));
     foreach(c,op,REL,Operation) {
         if (comp(c, LT, GE) && comp(c, GT, LE))
             result = comp(a, b, op.type);
